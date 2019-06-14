@@ -2,7 +2,6 @@
     "dev": {
         "app_function": "app.app", 
         "aws_region": "us-east-1", 
-        "profile_name": "default", 
         "project_name": "zappa-cd", 
         "runtime": "python2.7", 
         "s3_bucket": "zappa-6ob81889j"
