@@ -5,7 +5,7 @@ app = Flask('zapp')
 
 @app.route('/')
 def index():
-    return "hi from zappa!"
+    return "Is CD working correctly?"
 
 
 if __name__ == '__main__':
