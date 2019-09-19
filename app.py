@@ -5,7 +5,7 @@ app = Flask('zapp')
 
 @app.route('/')
 def index():
-    return "Is CD working correctly?"
+    return "Check CD with Travis specific keys"
 
 
 if __name__ == '__main__':
