@@ -1,10 +1,12 @@
-from aws_xray_sdk.core import xray_recorder, patch_all
+from aws_xray_sdk.core import xray_recorder, patch_all, patch
 from aws_xray_sdk.ext.flask.middleware import XRayMiddleware
 from flask import Flask
 
 import boto3
 import base64
 from botocore.exceptions import ClientError
+
+import requests
 
 app = Flask('zapp')
 
@@ -71,7 +73,9 @@ def index():
     secret = get_secret()
     xray_recorder.end_subsegment()
 
-    return f"Secret {secret}"
+    resp = requests.get('http://example.com')
+
+    return f"Secret {secret}, Status: {resp.status_code}"
 
 
 if __name__ == '__main__':
